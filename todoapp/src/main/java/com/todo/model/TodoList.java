@@ -28,8 +28,8 @@ public class TodoList implements Serializable {
 	@Column
     private Boolean completed;
 
-	/*@Column
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "list")
+	@Column
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<Item> itemList = new HashSet<>(0);
 
     public Set<Item> getItemList() {
@@ -38,7 +38,7 @@ public class TodoList implements Serializable {
 
     public void setItemList(Set<Item> itemList) {
         this.itemList = itemList;
-    }*/
+    }
 
     public int getId() {
         return id;

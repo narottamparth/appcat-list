@@ -20,7 +20,7 @@ public interface TodoListService {
 
 	public TodoList markList(Integer listId,Boolean mark);
 
-	/*// --------- Items services ------------//
+	// --------- Items services ------------//
 
 	public Set<Item> getAllItems(Integer listId);
 
@@ -28,5 +28,5 @@ public interface TodoListService {
 
 	public TodoList removeItem(Integer listId , Integer id);
 
-	public TodoList markItem(Integer listId , Integer id);*/
+	public TodoList markItem(Integer listId , Integer id);
 }

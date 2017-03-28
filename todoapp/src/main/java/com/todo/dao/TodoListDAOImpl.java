@@ -52,13 +52,12 @@ public class TodoListDAOImpl implements TodoListDAO {
 		return todoList;
 	}
 
-    /*@Override
+    @Override
 	public TodoList addItem(Integer listId , Item item) {
-        Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
         TodoList list = (TodoList) session.get(TodoList.class,listId);
         list.getItemList().add(item);
-        item.setList(list);
         session.saveOrUpdate(list);
         session.save(item);
         session.getTransaction().commit();
@@ -68,8 +67,8 @@ public class TodoListDAOImpl implements TodoListDAO {
 
     @Override
     public TodoList removeItem(Integer listId , Integer itemId) {
-        Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
         TodoList list = (TodoList) session.get(TodoList.class,listId);
         Item item = (Item) session.get(Item.class,itemId);
         list.getItemList().remove(item);
@@ -81,17 +80,18 @@ public class TodoListDAOImpl implements TodoListDAO {
 
     @Override
     public TodoList markItem(Integer listId , Integer itemId) {
-        Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
         TodoList list = (TodoList) session.get(TodoList.class,listId);
         Item item = (Item) session.get(Item.class,itemId);
         list.getItemList().remove(item);
         item.setCompleted(true);
         list.getItemList().add(item);
         session.saveOrUpdate(list);
+        session.saveOrUpdate(item);
         session.getTransaction().commit();
         session.close();
         return list;
-    }*/
+    }
 
 }

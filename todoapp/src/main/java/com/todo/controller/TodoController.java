@@ -55,15 +55,15 @@ public class TodoController {
 		return list;
 	}
 
-	/*// .............. Items Controller ...............................//
+	// .............. Items Controller ...............................//
     @RequestMapping(value = "/item/all/{listId}")
-    public @ResponseBody Set<Item> listItems(Integer listId) throws IOException {
+    public @ResponseBody Set<Item> listItems(@PathVariable Integer listId) throws IOException {
         Set<Item> itemList = todoListService.getAllItems(listId);
         return itemList;
     }
 
     @RequestMapping(value = "/item/add/{listId}")
-    public @ResponseBody TodoList addItem(@PathVariable Integer listId,Item item) throws IOException {
+    public @ResponseBody TodoList addItem(@PathVariable Integer listId,@RequestBody Item item) throws IOException {
         return todoListService.addItem(listId,item);
     }
 
@@ -77,6 +77,6 @@ public class TodoController {
     public @ResponseBody TodoList markItem(@PathVariable Integer listId,@PathVariable Integer itemId) throws IOException {
         return todoListService.markItem(listId,itemId);
 
-    }*/
+    }
 
 }

@@ -17,9 +17,9 @@ public interface TodoListDAO {
 
 	public TodoList getList(int listId);
 
-	/*public TodoList addItem(Integer listId , Item item);
+	public TodoList addItem(Integer listId , Item item);
 
     public TodoList removeItem(Integer listId , Integer itemId);
 
-    public TodoList markItem(Integer listId , Integer itemId);*/
+    public TodoList markItem(Integer listId , Integer itemId);
 }

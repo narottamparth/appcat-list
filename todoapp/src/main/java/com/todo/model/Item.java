@@ -3,17 +3,14 @@ package com.todo.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/*@Entity
-@Table(name = "item")*/
+@Entity
+@Table(name = "item")
 public class Item implements Serializable {
 
-    /*@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Integer id;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "list_id")
-    private TodoList list;
     private String content;
     private Boolean completed;
 
@@ -23,14 +20,6 @@ public class Item implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public TodoList getList() {
-        return list;
-    }
-
-    public void setList(TodoList list) {
-        this.list = list;
     }
 
     public String getContent() {
@@ -47,5 +36,5 @@ public class Item implements Serializable {
 
     public void setCompleted(Boolean completed) {
         this.completed = completed;
-    }*/
+    }
 }

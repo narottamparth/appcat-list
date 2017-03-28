@@ -55,7 +55,7 @@ public class TodoListServiceImpl implements TodoListService {
     }
 
     // Implementation for items //
-    /*@Override
+    @Override
     public Set<Item> getAllItems(Integer listId) {
         TodoList list = getList(listId);
         return list.getItemList();
@@ -74,7 +74,7 @@ public class TodoListServiceImpl implements TodoListService {
     @Override
     public TodoList markItem(Integer listId, Integer id) {
         return todoListDAO.markItem(listId,id);
-    }*/
+    }
 
     public void setTodoListDAO(TodoListDAO todoListDAO) {
 		this.todoListDAO = todoListDAO;
